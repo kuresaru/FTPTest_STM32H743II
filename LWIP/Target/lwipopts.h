@@ -39,28 +39,20 @@
 
 /* STM32CubeMX Specific Parameters (not defined in opt.h) ---------------------*/
 /* Parameters set in STM32CubeMX LwIP Configuration GUI -*/
-/*----- WITH_RTOS disabled (Since FREERTOS is not set) -----*/
-#define WITH_RTOS 0
+/*----- WITH_RTOS enabled (Since FREERTOS is set) -----*/
+#define WITH_RTOS 1
 /*----- CHECKSUM_BY_HARDWARE enabled -----*/
 #define CHECKSUM_BY_HARDWARE 1
 /*-----------------------------------------------------------------------------*/
 
 /* LwIP Stack Parameters (modified compared to initialization value in opt.h) -*/
 /* Parameters set in STM32CubeMX LwIP Configuration GUI -*/
-/*----- Value in opt.h for LWIP_DHCP: 0 -----*/
-#define LWIP_DHCP 1
 /*----- Default value in ETH configuration GUI in CubeMx: 1524 -----*/
 #define ETH_RX_BUFFER_SIZE 1524
-/*----- Value in opt.h for NO_SYS: 0 -----*/
-#define NO_SYS 1
-/*----- Value in opt.h for SYS_LIGHTWEIGHT_PROT: 1 -----*/
-#define SYS_LIGHTWEIGHT_PROT 0
 /*----- Value in opt.h for MEM_ALIGNMENT: 1 -----*/
 #define MEM_ALIGNMENT 4
 /*----- Default Value for H7 devices: 0x30044000 -----*/
 #define LWIP_RAM_HEAP_POINTER 0x30044000
-/*----- Value in opt.h for MEMP_NUM_SYS_TIMEOUT: (LWIP_TCP + IP_REASSEMBLY + LWIP_ARP + (2*LWIP_DHCP) + LWIP_AUTOIP + LWIP_IGMP + LWIP_DNS + (PPP_SUPPORT*6*MEMP_NUM_PPP_PCB) + (LWIP_IPV6 ? (1 + LWIP_IPV6_REASS + LWIP_IPV6_MLD) : 0)) -*/
-#define MEMP_NUM_SYS_TIMEOUT 5
 /*----- Value supported for H7 devices: 1 -----*/
 #define LWIP_SUPPORT_CUSTOM_PBUF 1
 /*----- Value in opt.h for LWIP_ETHERNET: LWIP_ARP || PPPOE_SUPPORT -*/
@@ -75,12 +67,32 @@
 #define TCP_SNDQUEUELOWAT 5
 /*----- Value in opt.h for TCP_WND_UPDATE_THRESHOLD: LWIP_MIN(TCP_WND/4, TCP_MSS*4) -----*/
 #define TCP_WND_UPDATE_THRESHOLD 536
+/*----- Default Value for LWIP_NETIF_STATUS_CALLBACK: 0 ---*/
+#define LWIP_NETIF_STATUS_CALLBACK 1
+/*----- Default Value for LWIP_NETIF_EXT_STATUS_CALLBACK: 0 ---*/
+#define LWIP_NETIF_EXT_STATUS_CALLBACK 1
 /*----- Value in opt.h for LWIP_NETIF_LINK_CALLBACK: 0 -----*/
 #define LWIP_NETIF_LINK_CALLBACK 1
-/*----- Value in opt.h for LWIP_NETCONN: 1 -----*/
-#define LWIP_NETCONN 0
-/*----- Value in opt.h for LWIP_SOCKET: 1 -----*/
-#define LWIP_SOCKET 0
+/*----- Value in opt.h for TCPIP_THREAD_STACKSIZE: 0 -----*/
+#define TCPIP_THREAD_STACKSIZE 1024
+/*----- Value in opt.h for TCPIP_THREAD_PRIO: 1 -----*/
+#define TCPIP_THREAD_PRIO osPriorityNormal
+/*----- Value in opt.h for TCPIP_MBOX_SIZE: 0 -----*/
+#define TCPIP_MBOX_SIZE 6
+/*----- Value in opt.h for SLIPIF_THREAD_STACKSIZE: 0 -----*/
+#define SLIPIF_THREAD_STACKSIZE 1024
+/*----- Value in opt.h for SLIPIF_THREAD_PRIO: 1 -----*/
+#define SLIPIF_THREAD_PRIO 3
+/*----- Value in opt.h for DEFAULT_THREAD_STACKSIZE: 0 -----*/
+#define DEFAULT_THREAD_STACKSIZE 1024
+/*----- Value in opt.h for DEFAULT_THREAD_PRIO: 1 -----*/
+#define DEFAULT_THREAD_PRIO 3
+/*----- Value in opt.h for DEFAULT_UDP_RECVMBOX_SIZE: 0 -----*/
+#define DEFAULT_UDP_RECVMBOX_SIZE 6
+/*----- Value in opt.h for DEFAULT_TCP_RECVMBOX_SIZE: 0 -----*/
+#define DEFAULT_TCP_RECVMBOX_SIZE 6
+/*----- Value in opt.h for DEFAULT_ACCEPTMBOX_SIZE: 0 -----*/
+#define DEFAULT_ACCEPTMBOX_SIZE 6
 /*----- Value in opt.h for RECV_BUFSIZE_DEFAULT: INT_MAX -----*/
 #define RECV_BUFSIZE_DEFAULT 2000000000
 /*----- Value in opt.h for LWIP_STATS: 1 -----*/
@@ -101,20 +113,6 @@
 #define CHECKSUM_CHECK_TCP 0
 /*----- Value in opt.h for CHECKSUM_CHECK_ICMP6: 1 -----*/
 #define CHECKSUM_CHECK_ICMP6 0
-/*----- Default Value for NETIF_DEBUG: LWIP_DBG_OFF ---*/
-#define NETIF_DEBUG LWIP_DBG_ON
-/*----- Default Value for ICMP_DEBUG: LWIP_DBG_OFF ---*/
-#define ICMP_DEBUG LWIP_DBG_ON
-/*----- Default Value for INET_DEBUG: LWIP_DBG_OFF ---*/
-#define INET_DEBUG LWIP_DBG_ON
-/*----- Default Value for IP_DEBUG: LWIP_DBG_OFF ---*/
-#define IP_DEBUG LWIP_DBG_ON
-/*----- Default Value for IP_REASS_DEBUG: LWIP_DBG_OFF ---*/
-#define IP_REASS_DEBUG LWIP_DBG_ON
-/*----- Default Value for UDP_DEBUG: LWIP_DBG_OFF ---*/
-#define UDP_DEBUG LWIP_DBG_ON
-/*----- Default Value for DHCP_DEBUG: LWIP_DBG_OFF ---*/
-#define DHCP_DEBUG LWIP_DBG_ON
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
 

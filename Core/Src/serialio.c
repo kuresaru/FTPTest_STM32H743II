@@ -1,10 +1,12 @@
-#include "stm32h7xx.h"
+#include "cmsis_os.h"
 
-extern UART_HandleTypeDef huart1;
+extern osMessageQId printQueueHandle;
 
 int _write(int fd, char *ptr, int len)
 {
+    int i;
     (void)fd;
-    HAL_UART_Transmit(&huart1, (uint8_t *)ptr, (uint16_t)len, 1000);
+    for (i = 0; i < len; i++)
+        osMessagePut(printQueueHandle, *ptr++, 0);
     return len;
 }

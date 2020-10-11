@@ -3,14 +3,10 @@
         {
             "name": "Win32",
             "includePath": [
+                "${workspaceFolder}/**",
                 "${workspaceFolder}/Core/Inc",
-                "${workspaceFolder}/LWIP/APP",
-                "${workspaceFolder}/LWIP/Target",
-                "C:/Users/kuresaru/STM32Cube/Repository/STM32Cube_FW_H7_V1.8.0/Middlewares/Third_Party/LwIP/**",
-                "C:/Users/kuresaru/STM32Cube/Repository/STM32Cube_FW_H7_V1.8.0/Drivers/STM32H7xx_HAL_Driver/Inc",
-                "C:/Users/kuresaru/STM32Cube/Repository/STM32Cube_FW_H7_V1.8.0/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
-                "C:/Users/kuresaru/STM32Cube/Repository/STM32Cube_FW_H7_V1.8.0/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
-                "C:/Users/kuresaru/STM32Cube/Repository/STM32Cube_FW_H7_V1.8.0/Drivers/CMSIS/Include"
+                "${workspaceFolder}/LWIP/**",
+                "${workspaceFolder}/Middlewares/**"
             ],
             "defines": [
                 "_DEBUG",
